@@ -8,7 +8,9 @@
 ![DuckDB](https://img.shields.io/badge/warehouse-DuckDB-yellow)
 ![Streamlit](https://img.shields.io/badge/dashboard-Streamlit-red)
 
-![Championship view](docs/screenshots/championship.jpg)
+### [▶ Open the live dashboard: pitwall-live.streamlit.app](https://pitwall-live.streamlit.app)
+
+[![Championship view](docs/screenshots/championship.jpg)](https://pitwall-live.streamlit.app)
 
 ## What's inside
 
@@ -131,11 +133,9 @@ python -m pitwall.insights              # regenerate INSIGHTS.md
 pytest                                  # unit tests on a synthetic season, no network needed
 ```
 
-### Deploy the dashboard for free
+### Deployment
 
-1. Sign in at [share.streamlit.io](https://share.streamlit.io) with GitHub.
-2. Choose **Create app**, select `AbdulSohail018/pitwall`, branch `main`, main file `app/streamlit_app.py`.
-3. Deploy. The app redeploys automatically each time the daily refresh commits new data.
+The dashboard is hosted free on Streamlit Community Cloud at [pitwall-live.streamlit.app](https://pitwall-live.streamlit.app). It redeploys automatically whenever the daily refresh commits new data. To host your own copy, create an app at [share.streamlit.io](https://share.streamlit.io) pointing at `app/streamlit_app.py`.
 
 ## Project layout
 
