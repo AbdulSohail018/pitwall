@@ -1,6 +1,7 @@
 import plotly.graph_objects as go
 import streamlit as st
-from lib import INK, MUTED, PURPLE, TYRES, colour_for, q, setup_page, show
+
+from lib import INK, PURPLE, TYRES, colour_for, q, setup_page, short_team, show
 
 setup_page("Teams")
 
@@ -19,7 +20,7 @@ grid = tp.pivot_table(index="team_name", columns="round", values="pace_delta_pct
 
 text = grid.map(lambda v: "" if v != v else ("●" if v == 0 else f"{v:.1f}"))
 fig = go.Figure(go.Heatmap(
-    z=grid.values, x=[f"R{r}" for r in grid.columns], y=grid.index,
+    z=grid.values, x=[f"R{r}" for r in grid.columns], y=[short_team(t) for t in grid.index],
     colorscale=[[0, PURPLE], [0.18, "#C9B3FB"], [0.45, "#F4F1FB"], [1, "#FFFFFF"]],
     zmin=0, zmax=max(2.5, float(grid.max().max() or 0)), xgap=2, ygap=2,
     text=text.values, texttemplate="%{text}", textfont=dict(size=11, color=INK),
@@ -85,4 +86,3 @@ with right:
         what = ("the car is stationary" if use_stationary else "the car is in the pit lane, entry to exit")
         st.markdown(f'<p class="note">Time {what}. Purple is the quickest crew.</p>', unsafe_allow_html=True)
 
-_ = MUTED

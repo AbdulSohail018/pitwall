@@ -14,7 +14,14 @@ from pathlib import Path
 
 import duckdb
 
-from pitwall.config import DATA_DIR, FUEL_CORRECTION_S_PER_LAP, MAX_RACE_POINTS, MAX_SPRINT_POINTS, SQL_DIR, current_season
+from pitwall.config import (
+    DATA_DIR,
+    FUEL_CORRECTION_S_PER_LAP,
+    MAX_RACE_POINTS,
+    MAX_SPRINT_POINTS,
+    SQL_DIR,
+    current_season,
+)
 
 log = logging.getLogger(__name__)
 

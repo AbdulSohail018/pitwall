@@ -1,5 +1,6 @@
 import plotly.graph_objects as go
 import streamlit as st
+
 from lib import INK, MUTED, PURPLE, colour_for, q, setup_page, show
 
 setup_page("Drivers")
@@ -42,7 +43,7 @@ fig.update_layout(
     polar=dict(bgcolor="#FFFFFF", radialaxis=dict(range=[0, 100], tickvals=[25, 50, 75, 100], gridcolor="#E3E7EC",
                                                  tickfont=dict(color=MUTED, size=10)),
                angularaxis=dict(gridcolor="#E3E7EC", tickfont=dict(size=13, color=INK))),
-    legend=dict(y=-0.08), margin=dict(l=40, r=40, t=30, b=30),
+    legend=dict(y=-0.08), margin=dict(l=70, r=70, t=30, b=30),
 )
 left, right = st.columns([1.25, 1], gap="large")
 with left:
@@ -88,16 +89,17 @@ else:
     labels = [f"{r.driver_a} v {r.driver_b}" for r in h2h.itertuples()]
     colours = [colour_for(r.constructor_name) for r in h2h.itertuples()]
     fig.add_trace(go.Bar(y=labels, x=-h2h.a_quali, orientation="h", marker_color=colours, name="Driver A",
-                         text=h2h.driver_a + " " + h2h.a_quali.astype(str), textposition="inside",
+                         text=h2h.driver_a + " " + h2h.a_quali.astype(int).astype(str), textposition="inside",
                          insidetextanchor="start", hovertemplate="%{text} quali wins<extra></extra>"))
-    fig.add_trace(go.Bar(y=labels, x=h2h.b_quali, orientation="h", marker_color=colours, opacity=0.45, name="Driver B",
-                         text=h2h.b_quali.astype(str) + " " + h2h.driver_b, textposition="inside",
+    fig.add_trace(go.Bar(y=labels, x=h2h.b_quali, orientation="h", marker_color=[rgba(c, 0.4) for c in colours],
+                         name="Driver B",
+                         text=h2h.b_quali.astype(int).astype(str) + " " + h2h.driver_b, textposition="inside",
                          insidetextanchor="end", hovertemplate="%{text} quali wins<extra></extra>"))
     fig.update_layout(barmode="relative", showlegend=False, bargap=0.35,
                       xaxis=dict(showticklabels=False, title=None, zeroline=True, zerolinecolor=INK),
                       yaxis=dict(autorange="reversed"), uniformtext=dict(minsize=11, mode="show"),
                       font=dict(color=INK))
-    fig.update_traces(textfont=dict(color=INK, family="Saira Semi Condensed", size=13))
+    fig.update_traces(textfont=dict(color=INK, family="Saira Semi Condensed, Saira, sans-serif", size=13))
     show(fig, 60 + 40 * len(h2h))
 
     table = h2h.rename(columns={

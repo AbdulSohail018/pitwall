@@ -2,7 +2,8 @@ import html
 
 import plotly.graph_objects as go
 import streamlit as st
-from lib import FADE, INK, MUTED, PURPLE, RULE, SEASON, colour_for, q, setup_page, show, spread_labels
+
+from lib import FADE, INK, MUTED, PURPLE, RULE, SEASON, colour_for, q, setup_page, short_team, show, spread_labels
 
 setup_page("Championship")
 
@@ -62,7 +63,7 @@ with tower_col:
             f'<span class="tower-pos">{i}</span>'
             f'<span class="tower-bar" style="background:{colour_for(r.constructor_name)}"></span>'
             f'<span><span class="tower-code">{html.escape(str(r.driver_code))}</span>'
-            f'<span class="tower-team">{html.escape(r.constructor_name)}</span></span>'
+            f'<span class="tower-team">{html.escape(short_team(r.constructor_name))}</span></span>'
             f'<span class="tower-gap{" leader" if r.gap_to_leader == 0 else ""}">{gap}</span></div>'
         )
     st.markdown(

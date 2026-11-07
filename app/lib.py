@@ -168,9 +168,9 @@ def empty_state(message: str) -> None:
 pio.templates["pitwall"] = go.layout.Template(layout=go.Layout(
     font=dict(family="Saira, system-ui, sans-serif", color=INK, size=13),
     paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor=PANEL,
-    xaxis=dict(gridcolor="#EDF0F3", linecolor=RULE, zeroline=False, ticks="outside", tickcolor=RULE),
-    yaxis=dict(gridcolor="#EDF0F3", linecolor=RULE, zeroline=False),
-    margin=dict(l=10, r=10, t=36, b=10),
+    xaxis=dict(gridcolor="#EDF0F3", linecolor=RULE, zeroline=False, ticks="outside", tickcolor=RULE, automargin=True),
+    yaxis=dict(gridcolor="#EDF0F3", linecolor=RULE, zeroline=False, automargin=True),
+    margin=dict(l=8, r=16, t=48, b=8),
     hoverlabel=dict(font=dict(family="Saira Semi Condensed, sans-serif", size=13), bgcolor=INK, bordercolor=INK,
                     font_color="#fff"),
     legend=dict(orientation="h", y=-0.15, x=0, font=dict(size=12)),
@@ -193,3 +193,10 @@ def spread_labels(values: list[float], min_gap: float) -> list[float]:
         if out[cur] - out[prev] < min_gap:
             out[cur] = out[prev] + min_gap
     return out
+
+
+def short_team(name: str) -> str:
+    """'Alpine F1 Team' -> 'Alpine', 'Red Bull Racing' -> 'Red Bull'."""
+    for suffix in (" F1 Team", " Racing", " Formula One Team", " F1"):
+        name = name.replace(suffix, "")
+    return name.strip()

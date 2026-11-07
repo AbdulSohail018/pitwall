@@ -1,6 +1,7 @@
 import plotly.graph_objects as go
 import streamlit as st
-from lib import FADE, INK, MUTED, PURPLE, colour_for, q, setup_page, show
+
+from lib import INK, PURPLE, colour_for, q, setup_page, show
 
 setup_page("Eras")
 
@@ -36,7 +37,7 @@ fig.add_trace(go.Scatter(
 ))
 fig.update_layout(
     yaxis=dict(title="Top team's share of wins (%)", range=[0, 105]),
-    yaxis2=dict(title="Different winners", overlaying="y", side="right", range=[0, max(12, era.winners.max() + 2)],
+    yaxis2=dict(title="Different winners", overlaying="y", side="right", range=[0, 12.5], dtick=2,
                 showgrid=False),
     xaxis=dict(dtick=1), legend=dict(y=-0.14), bargap=0.25,
 )
@@ -72,4 +73,3 @@ with right:
                 f'{int(closest.title_margin)} points. The current season is shown as it stands.</p>',
                 unsafe_allow_html=True)
 
-_ = (FADE, MUTED)

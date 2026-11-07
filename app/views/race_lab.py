@@ -1,5 +1,6 @@
 import plotly.graph_objects as go
 import streamlit as st
+
 from lib import FADE, INK, MUTED, PURPLE, TYRES, kpis, q, setup_page, show
 
 setup_page("Race Lab")
@@ -62,13 +63,13 @@ else:
         fig.add_trace(go.Scatter(
             x=d.lap, y=d.position, mode="lines", name=code, showlegend=False,
             line=dict(color=d.team_colour.iloc[0] if on else FADE, width=3 if on else 1.1, shape="hv"),
-            opacity=1 if on else 0.55, hovertemplate=f"<b>{code}</b> lap %{{x}}: P%{{y}}<extra></extra>",
+            opacity=1 if on else 0.35, hovertemplate=f"<b>{code}</b> lap %{{x}}: P%{{y}}<extra></extra>",
         ))
         if on:
             last = d.iloc[-1]
             fig.add_annotation(x=last.lap, y=last.position, text=f"<b>{code}</b>", showarrow=False, xanchor="left",
                                xshift=6, font=dict(size=12, color=INK))
-    fig.update_yaxes(autorange="reversed", dtick=1, title="Position")
+    fig.update_yaxes(range=[float(pos.position.max()) + 0.5, 0.5], dtick=1, title="Position")
     fig.update_xaxes(title="Lap")
     show(fig, 520)
 

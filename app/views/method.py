@@ -2,8 +2,8 @@ import io
 from contextlib import redirect_stdout
 
 import streamlit as st
-from lib import SEASON, connection, meta, q, setup_page
 
+from lib import SEASON, connection, meta, q, setup_page
 from pitwall import warehouse
 
 setup_page("Method")

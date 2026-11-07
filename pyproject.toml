@@ -1,0 +1,21 @@
+[project]
+name = "pitwall"
+version = "1.0.0"
+description = "Live Formula 1 race intelligence: OpenF1 + Jolpica pipeline, DuckDB warehouse, Streamlit dashboard."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Abdul Sohail" }]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["pitwall", "lib"]

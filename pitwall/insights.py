@@ -43,7 +43,8 @@ def generate() -> str:
                   f"({int(top_wins.wins)}).",
                   f"- Best racecraft: {gainer.driver_name} gains {gainer.avg_positions_gained:+.1f} places per race "
                   "from the grid on average.",
-                  f"- Most reliable front-runner: {reliable.driver_name}, with {int(reliable.dnfs)} DNFs in "
+                  f"- Most reliable front-runner: {reliable.driver_name}, with {int(reliable.dnfs)} "
+                  f"DNF{'' if int(reliable.dnfs) == 1 else 's'} in "
                   f"{int(reliable.starts)} starts.", ""]
 
     h2h = df("SELECT * FROM mart_teammate_h2h")
