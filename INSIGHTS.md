@@ -1,6 +1,6 @@
 # PitWall insights: 2026 season
 
-_Generated 2026-11-13 14:41 UTC from live OpenF1 and Jolpica data. Regenerated automatically after every daily refresh._
+_Generated 2026-11-14 13:39 UTC from live OpenF1 and Jolpica data. Regenerated automatically after every daily refresh._
 
 ## The title fight
 
@@ -25,7 +25,7 @@ _Generated 2026-11-13 14:41 UTC from live OpenF1 and Jolpica data. Regenerated a
 
 ## Tyres
 
-- Median fuel-corrected degradation: Hard 0.070s/lap (170 stints), Soft 0.064s/lap (140 stints) and Medium 0.065s/lap (176 stints).
+- Median fuel-corrected degradation: Medium 0.065s/lap (176 stints), Soft 0.064s/lap (140 stints) and Hard 0.070s/lap (170 stints).
 
 ## Pit stops
 
