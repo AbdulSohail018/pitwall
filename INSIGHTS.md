@@ -1,6 +1,6 @@
 # PitWall insights: 2026 season
 
-_Generated 2026-11-15 14:03 UTC from live OpenF1 and Jolpica data. Regenerated automatically after every daily refresh._
+_Generated 2026-11-16 15:59 UTC from live OpenF1 and Jolpica data. Regenerated automatically after every daily refresh._
 
 ## The title fight
 
