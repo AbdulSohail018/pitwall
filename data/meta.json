@@ -1,17 +1,24 @@
 {
-  "refreshed_at": "2026-11-20T15:35:04+00:00",
+  "refreshed_at": "2026-11-22T14:41:47+00:00",
   "season": 2026,
   "updated": {
     "jolpica": {
       "schedule_2026": 23,
-      "results_2026": 440,
-      "qualifying_2026": 435,
+      "results_2026": 462,
+      "qualifying_2026": 457,
       "sprint_2026": 132,
-      "pitstops_2026": 837,
+      "pitstops_2026": 860,
       "standings_2026": 25
     },
     "openf1": {
-      "sessions": 31
+      "sessions": 31,
+      "drivers": 22,
+      "laps": 989,
+      "stints": 45,
+      "pit": 23,
+      "weather": 148,
+      "race_control": 110,
+      "position": 708
     }
   }
 }
