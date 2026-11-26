@@ -1,5 +1,5 @@
 {
-  "refreshed_at": "2026-11-25T17:22:29+00:00",
+  "refreshed_at": "2026-11-26T17:03:05+00:00",
   "season": 2026,
   "updated": {
     "jolpica": {
@@ -11,14 +11,7 @@
       "standings_2026": 25
     },
     "openf1": {
-      "sessions": 31,
-      "drivers": 22,
-      "laps": 989,
-      "stints": 45,
-      "pit": 23,
-      "weather": 148,
-      "race_control": 110,
-      "position": 708
+      "sessions": 31
     }
   }
 }
